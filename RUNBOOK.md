@@ -53,6 +53,23 @@ Notes
 End of runbook
 
 CI/CD Kickoff
+- To trigger Render + Vercel deployments, push a small non-sensitive change to the repo (e.g., update RUNBOOK.md with a timestamp) to trigger the GitHub Actions workflow.
+- Monitor the GitHub Actions tab for Deploy Monorepo to Render & Vercel (Monorepo) and wait for completion.
+- After completion, retrieve the deployed URLs from the Render dashboard (backend) and Vercel dashboard (frontend) or from the CI run logs.
+- Deployed URLs (latest CI run)
+  - Latest CI run: https://github.com/vidhyajose98-dotcom/V_Care_/actions/runs/27294315950
+  - Backend (Render) URL: [to be filled after deployment]
+  - Frontend (Vercel) URL: [to be filled after deployment]
+- How to fetch deployed URLs now:
+  - Run: python fetch_github_run_url.py
+  - Then check the Render/Vercel dashboards for the finalized URLs if not present in CI logs.
+
+- Quick runbook addition for reproducibility
+  - Ensure repository is linked to Render and Vercel via GitHub integrations.
+  - Push to main to trigger the Deploy Monorepo workflow.
+  - After CI completes, gather the final URLs from dashboards and update RUNBOOK.md.
+
+CI/CD Kickoff
 - To trigger the Render + Vercel deployments, push a small non-sensitive change to the repo (e.g., update RUNBOOK.md with a timestamp) to trigger the GitHub Actions workflow.
 - Monitor the GitHub Actions tab for the job named "Deploy Monorepo to Render & Vercel (Monorepo)" and wait for completion.
 - After the workflow completes, retrieve the deployed URLs from Render (backend) and Vercel (frontend) in their respective dashboards or from the GitHub Actions logs if you configured outputs.
@@ -62,3 +79,18 @@ CI/CD Kickoff
 - Monitor the GitHub Actions tab for the job named "Deploy Monorepo to Render & Vercel (Monorepo)" and wait for completion.
 - After the workflow completes, retrieve the deployed URLs from Render (backend) and Vercel (frontend) in their respective dashboards or from the GitHub Actions logs if you configured outputs.
 - If the deployment fails, check logs in the Actions tab, verify secrets (Render Secrets, Vercel env vars), and ensure the monorepo structure (frontend/vcare and backend) matches the workflow expectations.
+
+- Deployed URLs (latest CI run)
+  - Latest CI run URL: https://github.com/vidhyajose98-dotcom/V_Care_/actions/runs/27294315950
+  - Backend (Render) URL: [to be filled after deployment]
+  - Frontend (Vercel) URL: [to be filled after deployment]
+
+- How to fetch deployed URLs now:
+  - Run the helper script to fetch the latest run URL:
+    - python fetch_github_run_url.py
+  - Then open the CI run page in the browser and locate the deployment steps for Render and Vercel to copy the final URLs from their dashboards if not printed in logs.
+
+- Quick runbook addition for reproducibility
+  - Ensure repository is linked to Render and Vercel via GitHub integrations.
+  - Push to main to trigger the Deploy Monorepo workflow.
+  - After CI completes, gather the final URLs from the dashboards and update RUNBOOK.md.

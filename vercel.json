@@ -1,16 +1,4 @@
 {
-  "version": 2,
-  "rootDirectory": "frontend/vcare",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/$1" }
-  ]
+  "buildCommand": "cd frontend/vcare && npm run build",
+  "outputDirectory": "frontend/vcare/dist"
 }
